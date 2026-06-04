@@ -1,0 +1,48 @@
+defaults:
+  # Absolute path to the built llama-server binary.
+  llama_server: /path/to/llama.cpp/llama-server
+
+  # Folder containing your .gguf files. Per-entry `file` is joined with this.
+  # Tip: you can also put an absolute path in `file` to bypass model_root.
+  model_root: /path/to/your/ai_models
+
+  # Args passed to every llama-server invocation. Per-entry `args` is appended
+  # after this list, and llama-server honours the last occurrence of a flag,
+  # so per-entry args can override defaults (e.g. --ctx-size).
+  args:
+    - "--host"
+    - "127.0.0.1"
+    - "--port"
+    - "8080"
+    - "--n-gpu-layers"
+    - "999"
+    - "--threads"
+    - "8"
+    - "--parallel"
+    - "1"
+    - "--flash-attn"
+    - "on"
+    - "--ctx-size"
+    - "4096"
+
+models:
+  # Candidates. Each one is spun up in turn, asked the prompt, and torn down.
+  - name: gemma-3-1b
+    file: google/gemma-3-1b-it-Q4_K_M.gguf
+    args: ["--ctx-size", "32768"]
+
+  - name: qwen2.5-7b
+    file: qwen/qwen2.5-7b-instruct-q4_k_m.gguf
+
+  # - name: llama-3.1-8b
+  #   file: meta/llama-3.1-8b-instruct-q5_k_m.gguf
+  #   args: ["--ctx-size", "8192"]
+
+judges:
+  # Judges score every candidate's result against prompts/reference.txt.
+  # Same shape as `models`. Add as many as you want; leave empty to skip judging.
+  - name: judge-llama-3.1-8b
+    file: meta/llama-3.1-8b-instruct-q5_k_m.gguf
+
+  # - name: judge-qwen2.5-7b
+  #   file: qwen/qwen2.5-7b-instruct-q4_k_m.gguf

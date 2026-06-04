@@ -1,0 +1,17 @@
+[project]
+name = "local-llm-test"
+version = "0.1.0"
+description = "Minimal harness for comparing local .gguf models served by llama-server, with optional LLM-as-judge scoring and a results viewer."
+readme = "README.md"
+requires-python = ">=3.14"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
+classifiers = [
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+]
+dependencies = [
+  "openai>=2.40.0",
+  "psutil>=7.2.2",
+  "pyyaml>=6.0.3",
+]

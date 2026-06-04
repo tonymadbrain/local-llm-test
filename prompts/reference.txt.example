@@ -1,0 +1,1 @@
+A transformer is a neural network architecture that processes sequences using self-attention, letting every position in the input attend to every other position in parallel. It replaced earlier recurrent designs (RNNs, LSTMs) as the standard for language modeling because attention scales better and trains faster on modern hardware.

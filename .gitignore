@@ -1,0 +1,24 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Per-run model outputs
+results/
+
+# Config
+config/
+
+# Prompts
+prompts/
+
+# System
+.codegraph/
+.vscode/
+.claude/

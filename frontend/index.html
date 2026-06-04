@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>local-llm-test viewer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <span class="logo">local-llm-test</span>
+    <button id="btn-refresh" onclick="loadRunList()">⟳ refresh</button>
+  </header>
+
+  <main>
+    <aside id="sidebar">
+      <div class="sidebar-header">Runs</div>
+      <div id="run-list"></div>
+    </aside>
+
+    <section id="detail">
+      <div id="detail-empty">Select a run from the list.</div>
+
+      <div id="detail-content" hidden>
+        <div id="detail-header"></div>
+
+        <div class="tabs" id="chart-tabs">
+          <button class="tab active" data-tab="overall">Overall</button>
+          <button class="tab" data-tab="scores">Judge scores</button>
+          <button class="tab" data-tab="speed">Speed</button>
+          <button class="tab" data-tab="memory">Memory</button>
+        </div>
+
+        <div class="chart-container">
+          <svg id="chart-svg"></svg>
+        </div>
+
+        <div id="table-container"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal-backdrop" hidden>
+    <div id="modal">
+      <button id="modal-close" onclick="closeModal()">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

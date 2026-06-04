@@ -1,0 +1,13 @@
+You are a careful evaluator. Score how well the CANDIDATE answer addresses the TASK, using the REFERENCE answer as a guideline of what a good answer looks like. Focus on correctness for the task; tolerate stylistic and wording differences as long as the substance is right.
+
+TASK:
+$task
+
+REFERENCE ANSWER:
+$reference
+
+CANDIDATE ANSWER:
+$candidate
+
+Respond with JSON matching this shape:
+{"score": <integer from 1 to 10>, "reason": "<one sentence explaining the score>"}
