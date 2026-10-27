@@ -1,5 +1,10 @@
 # local-llm-test
 
+> [!CAUTION]
+> **Disclaimer:** <br>This repo was vibecoded. It's a high-speed prototype meant for local experimentation, not a production-grade piece of software. It hasn't been through a formal security audit or stress-tested for reliability. Run it at your own risk. If it breaks your environment or leaks your secrets, that's on you.
+
+![screenshot of the application showing scores for different models for one of the test runs](screenshot.png)
+
 Minimal harness for comparing local `.gguf` models served by [`llama-server`](https://github.com/ggerganov/llama.cpp).
 
 For each configured **candidate** model it:
